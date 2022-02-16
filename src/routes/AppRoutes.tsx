@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/drawer';
 import { HomeScreen } from '../screens';
 import { useDispatch } from 'react-redux';
-import { authLogout } from '../redux';
+import { authInitLogout } from '../redux';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,9 +16,9 @@ export const AppRoutes = () => {
 
   function CustomDrawerContent(props) {
     return (
-      <DrawerContentScrollView {...props} style={{backgroundColor: '#FFFFFF88'}}>
+      <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-        <DrawerItem label="Cerrar sesión" onPress={() => dispatch(authLogout())} />
+        <DrawerItem label="Cerrar sesión" onPress={() => dispatch(authInitLogout())} />
       </DrawerContentScrollView>
     );
   }
